@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutri-Detector</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="game-container">
+        <h1 id="main-title">Nutri-Detector</h1>
+        <h2 id="subtitle">¿Saludable o SOS?</h2>
+        
+        <div id="timer-container">
+            <div id="timer-bar"></div>
+        </div>
+
+        <div id="card-deck">
+            </div>
+
+        <div id="heart-feedback" class="hidden">❤️</div>
+        <div id="dislike-feedback" class="hidden">👎</div>
+
+        <div id="controls">
+            <button id="btn-left" class="control-btn">SOS</button>
+            <button id="btn-right" class="control-btn">Saludable</button>
+        </div>
+
+        <div id="score-container">
+            Puntuación: <span id="score">0</span>
+        </div>
+    </div>
+
+    <div id="feedback-screen" class="overlay hidden">
+        <div class="modal">
+            <h2 id="feedback-title">¡Correcto!</h2>
+            <p id="feedback-explanation">
+                Aquí va la explicación del PDF.
+            </p>
+            <button id="next-btn">Siguiente</button>
+        </div>
+    </div>
+
+    <div id="game-over-screen" class="overlay hidden">
+        <div class="modal">
+            <h2>¡Juego Terminado!</h2>
+            <p>Tu puntuación final es: <strong id="final-score">0</strong></p>
+            <button id="restart-btn">Jugar de Nuevo</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

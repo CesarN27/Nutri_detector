@@ -1,0 +1,234 @@
+/* Importar Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+    --color-healthy: #2ecc71;
+    --color-unhealthy: #e74c3c;
+    --color-primary: #3498db;
+    --color-light-bg: #f8f9fa;
+    --color-dark-text: #34495e;
+    --color-light-text: #7f8c8d;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    /* Fondo con gradiente más atractivo */
+    background: linear-gradient(45deg, #f3e7e9 0%, #e3eeff 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    color: var(--color-dark-text);
+}
+
+/* Título con gradiente */
+#main-title {
+    font-weight: 700;
+    font-size: 32px;
+    background: linear-gradient(45deg, var(--color-healthy), var(--color-primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#game-container {
+    position: relative;
+    width: 360px;
+    max-width: 90vw;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    text-align: center;
+    overflow: hidden;
+}
+
+/* --- Barra de Tiempo --- */
+#timer-container {
+    width: 100%;
+    height: 12px;
+    background-color: #ecf0f1;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+#timer-bar {
+    height: 100%;
+    width: 100%;
+    background-color: var(--color-healthy);
+    border-radius: 6px;
+    /* Transición suave para el color */
+    transition: width 0.1s linear, background-color 0.5s ease;
+}
+
+/* NUEVO: Clase para cuando queda poco tiempo */
+#timer-bar.low-time {
+    background-color: var(--color-unhealthy);
+}
+
+/* --- Tarjetas --- */
+#card-deck {
+    position: relative;
+    height: 420px;
+    margin-bottom: 25px;
+}
+
+.card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--color-light-bg);
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    will-change: transform;
+    /* NUEVA Animación de entrada */
+    animation: card-enter 0.5s ease-out;
+}
+
+/* NUEVO: Keyframe para la entrada de la tarjeta */
+@keyframes card-enter {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.card img {
+    width: 100%;
+    height: 280px;
+    object-fit: contain;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #eee;
+}
+
+.card h3 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--color-dark-text);
+}
+
+/* Clases de swipe (sin cambios) */
+.card.swipe-left { transform: translateX(-150%) rotate(-15deg); opacity: 0; }
+.card.swipe-right { transform: translateX(150%) rotate(15deg); opacity: 0; }
+.card.timeout { transform: translateY(150%); opacity: 0; }
+
+/* --- Feedback Emojis (Corazón y Dislike) --- */
+#heart-feedback, #dislike-feedback {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    font-size: 80px;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 10;
+}
+#heart-feedback { color: #e74c3c; }
+#dislike-feedback { color: #34495e; }
+
+/* Animación Corazón */
+.heart-pulse-animation { animation: heart-pulse 1s ease-out forwards; }
+@keyframes heart-pulse {
+    0% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+    30% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+    70% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+    100% { transform: translate(-50%, -50%) scale(1.2); opacity: 0; }
+}
+
+/* Animación Dislike */
+.dislike-shake-animation { animation: dislike-shake 1s ease-out forwards; }
+@keyframes dislike-shake {
+    0% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+    20% { transform: translate(-50%, -50%) scale(1.1) rotate(0deg); opacity: 1; }
+    40% { transform: translate(-50%, -50%) scale(1) rotate(-15deg); }
+    60% { transform: translate(-50%, -50%) scale(1) rotate(15deg); }
+    80% { transform: translate(-50%, -50%) scale(1) rotate(0deg); opacity: 1; }
+    100% { transform: translate(-50%, -50%) scale(0.9); opacity: 0; }
+}
+
+/* --- Controles y Puntuación --- */
+#controls { display: flex; justify-content: space-between; gap: 10px; }
+.control-btn {
+    width: 50%;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.control-btn:hover {
+    transform: scale(1.03);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+#btn-left { background-color: var(--color-unhealthy); }
+#btn-right { background-color: var(--color-healthy); }
+
+#score-container {
+    margin-top: 25px;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-light-text);
+}
+
+/* --- Pantallas Modales (sin cambios) --- */
+.overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+.overlay.hidden { opacity: 0; pointer-events: none; }
+.modal {
+    background: white;
+    padding: 30px 35px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 320px;
+    max-width: 85vw;
+}
+#feedback-title { margin-top: 0; margin-bottom: 10px; font-size: 28px; }
+.correct-feedback { color: var(--color-healthy); }
+.incorrect-feedback { color: var(--color-unhealthy); }
+#feedback-explanation {
+    font-size: 16px;
+    color: var(--color-dark-text);
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+.modal button {
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.modal button:hover { background-color: #2980b9; }
