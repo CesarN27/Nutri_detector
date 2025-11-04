@@ -8,62 +8,62 @@ document.addEventListener('DOMContentLoaded', () => {
             name: 'Nueces y Almendras',
             image: 'image/nueces.jpg',
             isHealthy: true,
-            explanation: ' Un puñado de nueces y almendras. Saludable (NOVA 1) Beneficio Univ.:¡Súper-Memoria! Grasas saludables que nutren tu cerebro para el examen.'
+            explanation: ' Un puñado de nueces y almendras. Saludable (NOVA 1 = mínimamente procesado) Beneficio.:¡Súper-Memoria! Grasas saludables que nutren tu cerebro para el examen.'
 
         },
         {
             name: 'Refresco Azucarado',
             image: 'image/coca.jpeg',
             isHealthy: false,
-            explanation: 'Una lata de refresco azucarado. SOS (NOVA 4) Guía 2025: ¡Fuera de tu plato diario! Limita las bebidas con azúcares añadidos.'
+            explanation: 'Una lata de refresco azucarado. SOS (NOVA 4 = Ultra procesado) Guía 2025: ¡Fuera de tu plato diario! Limita las bebidas con azúcares añadidos.'
         },
         {
             name: 'Lentejas o Frijoles',
             image: 'image/Lentejas.jpeg',
             isHealthy: true,
-            explanation: 'Un plato de lentejas o frijoles. Saludable (NOVA 1) Guía 2025: ¡Proteína Sostenible! Base de la alimentación mexicana y aliada del planeta.'
+            explanation: 'Un plato de lentejas o frijoles. Saludable (NOVA 1 mínimamente procesado) Guía 2025: ¡Proteína Sostenible! Base de la alimentación mexicana y aliada del planeta.'
         },
         {
             name: 'Barra de Cereal (Ultraprocesada)',
             image: 'image/barraProte.jpeg',
             isHealthy: false,
-            explanation: 'Una barra de cereal con muchos ingredientes impronunciables. SOS (NOVA 4) Clasificación NOVA: ¡Cuidado! Más de 5 ingredientes = Ultraprocesado. Léela bien.'
+            explanation: 'Una barra de cereal con muchos ingredientes impronunciables. SOS (NOVA 4 = Ultra procesado) Clasificación NOVA: ¡Cuidado! Más de 5 ingredientes = Ultraprocesado. Léela bien.'
         },
         {
             name: 'Vaso de Agua Simple',
             image: 'image/agua.jpeg',
             isHealthy: true,
-            explanation: 'Un vaso de agua simple. Saludable (NOVA 1) Beneficio Univ.: ¡Mejor Concentración! Mantente hidratado, es clave para el enfoque.'
+            explanation: 'Un vaso de agua simple. Saludable (NOVA 1 = mínimamente procesado) Beneficio.: ¡Mejor Concentración! Mantente hidratado, es clave para el enfoque.'
         },
         {
             name: 'Papas Fritas (Comerciales)',
             image: 'image/papitas.jpeg',
             isHealthy: false,
-            explanation: 'Una bolsa de papas fritas comerciales. SOS (NOVA 4) Clasificación NOVA: Alto en sodio y grasas. Evítalos para proteger tu corazón.'
+            explanation: 'Una bolsa de papas fritas comerciales. SOS (NOVA 4 = Ultra procesado) Clasificación NOVA: Alto en sodio y grasas. Evítalos para proteger tu corazón.'
         },
         {
             name: 'Aguacate en Tostada',
             image: 'image/aguacate.jpeg',
             isHealthy: true,
-            explanation: 'Aguacate en una tostada. Saludable (NOVA 1) Beneficio Univ.: ¡Omega-3 Power! Reduce la fatiga mental y el estrés.'
+            explanation: 'Aguacate en una tostada. Saludable (NOVA 1 = mínimamente procesado) Beneficio.: ¡Omega-3 Power! Reduce la fatiga mental y el estrés.'
         },
         {
             name: 'Manzana Fresca',
             image: 'https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?w=400',
             isHealthy: true,
-            explanation: 'Un plátano o manzana fresca. Saludable (NOVA 1) Guía 2025: ¡5 al día! Comer frutas y verduras de temporada para tu salud.'
+            explanation: 'Un plátano o manzana fresca. Saludable (NOVA 1 = mínimamente procesado) Guía 2025: ¡5 al día! Comer frutas y verduras de temporada para tu salud.'
         },
         {
             name: 'Pan Blanco Industrial',
             image: 'image/Pan.jpeg',
             isHealthy: false,
-            explanation: 'Una pieza de pan blanco industrial. SOS (NOVA 3) Guía 2025: Prefiere granos enteros para más fibra y energía duradera.'
+            explanation: 'Una pieza de pan blanco industrial. SOS (NOVA 3 = Procesado) Guía 2025: Prefiere granos enteros para más fibra y energía duradera.'
         },
         {
             name: 'Semillas de Calabaza (Pepitas)',
             image: 'image/Semillas.jpeg',
             isHealthy: true,
-            explanation: 'Un puñado de semillas de calabaza (pepitas). Saludable (NOVA 1). Beneficio Univ: ¡Fuente de hierro! Combate el cansancio y la anemia estudiantil.'
+            explanation: 'Un puñado de semillas de calabaza (pepitas). Saludable (NOVA 1 = mínimamente procesado). Beneficio.: ¡Fuente de hierro! Combate el cansancio y la anemia estudiantil.'
         }
     ];
 
